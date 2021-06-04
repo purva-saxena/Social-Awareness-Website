@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>feedbackForm</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <script>
+        $(function () {
+            $("#header").load("/views/header.html");
+            $("#footer").load("/views/footer.html");
+        })
+    </script>
+    <div id="header">
+
+    </div>
+
+
+    <main>
+        <div class="container">
+            <h4>
+                Feedback
+            </h4>
+            <hr>
+            <form action="/submitFeedback" method="POST">
+                <table style="font-weight: bold; font-size: 12px;">
+                    <tr>
+                        <td>
+                            Name<span style="color: red; font-weight: bold;">*</span> : 
+                        </td>
+                        <td>
+                            <input type="text" name="name" id="name" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Email<span style="color: red; font-weight: bold;">*</span> :
+                        </td>
+                        <td>
+                            <input type="email" name="email" id="email" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Feedback Topic<span style="color: red; font-weight: bold;">*</span> :
+                        </td>
+                        <td>
+                            <input type="text" name="topic" id="topic" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Feedback<span style="color: red; font-weight: bold;">*</span> :
+                        </td>
+                        <td>
+                            <textarea id="feedback" name="feedback" rows="4" cols="50" required></textarea>
+                        </td>
+                    </tr>
+                </table>
+                <button class="btn btn-primary" name="saveFeedback" id="saveFeedback">Submit Feedback</button>
+            </form>
+        </div>
+    </main>
+    <div id="footer">
+
+    </div>
+</body>
+
+</html>
